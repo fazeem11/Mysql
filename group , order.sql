@@ -10,8 +10,8 @@ CREATE TABLE customer (
 
 
 INSERT INTO Persons (PersonID, LastName, FirstName, Address, City)
-VALUES(4,'jiji','Gomez','kollam','dheavally');
-(3,'tom','cruse','america','Newyork'); 
+VALUES(4,'jiji','Gomez','kollam','dheavally'),
+(3,'tom','cruse','america','Newyork') ,
 (1, 'Tom B. Erichsen', 'Skagen ', 'Stavanger', 'Norway'),
 (2, 'peter', 'parker ', 'america', 'Newyork');
 
@@ -33,4 +33,40 @@ Select avg(FirstName)
 from persons
 where PersonID=2;
 
+select * from persons
+where PersonID between 1 and 3;
+
+create table orders(orderID int Not NULL,
+ CREATE TABLE Orders (
+    OrderID int NOT NULL,
+    OrderNumber int NOT NULL,
+    PersonID int,
+    PRIMARY KEY (OrderID),
+    FOREIGN KEY (PersonID) REFERENCES Persons(PersonID)); 
+    
+INSERT INTO newpersons (PersonID, Lastn, Firstn, Adds, City)
+VALUES(1,'','kun','korea','amer'),
+(2,'tanu','faya','huem','vv'),
+(3, 'janu  ', 'Skagen ', 'Stavanger', 'ming'),
+(4, 'ranu', 'rambo ', 'america', 'ankara');
+
+
+#order
+
+create table newpersons(
+	OrderID int Not null,
+    PersonID int Not NULL,
+    Lastn varchar(255),
+    Firstn varchar(255)NOT NULL,
+    Adds varchar(255)NOT NULL,
+    City varchar(255)NOT NULL,
+    UNIQUE (personID));
+INSERT INTO newpersons (PersonID, Lastn, Firstn, Adds, City)
+VALUES(1,'','kun','korea','amer'),
+(2,'tanu','faya','huem','vv'),
+(3, 'janu  ', 'Skagen ', 'Stavanger', 'ming'),
+(4, 'ranu', 'rambo ', 'america', 'ankara');
+
+
+drop table newpersons; 
 
